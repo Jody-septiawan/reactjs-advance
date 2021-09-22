@@ -1,9 +1,13 @@
 // import css modules
 import cssModules from './Form.module.css';
 
+import img from '../assets/img.jpeg';
+
 const styles = {
   form: {
     margin: '16px 20% 0',
+    backgroundImage: `url(${img})`,
+    backgroundSize: 'cover',
   },
   formGroup: {
     marginBottom: '16px',
