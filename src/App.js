@@ -1,13 +1,14 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Profile from "./pages/Profile";
-import SignIn from "./pages/SignIn";
-import DetailUser from "./pages/DetailUser";
+import Home from './pages/Home';
+import About from './pages/About';
+import Profile from './pages/Profile';
+import SignIn from './pages/SignIn';
+import DetailUser from './pages/DetailUser';
 // import component here
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/signin" component={SignIn} />
         {/* change route for page about, profile, and user:id to private route */}
+        <PrivateRoute path="/about" component={About} />
+        <PrivateRoute path="/profile" component={Profile} />
+        <PrivateRoute path="/user/:id" component={DetailUser} />
       </Switch>
     </Router>
   );
