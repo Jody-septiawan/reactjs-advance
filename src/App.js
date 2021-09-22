@@ -1,12 +1,14 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Profile from "./pages/Profile";
-import SignIn from "./pages/SignIn";
+import Home from './pages/Home';
+import About from './pages/About';
+import Profile from './pages/Profile';
+import SignIn from './pages/SignIn';
 // import component here
+import DetailUser from './pages/DetailUser';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/signin" component={SignIn} />
         {/* define new route */}
+        <Route exact path="/user/:id" component={DetailUser} />
+        <Route exact path="*" component={NotFound} />
       </Switch>
     </Router>
   );
