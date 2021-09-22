@@ -1,6 +1,22 @@
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button } from 'react-bootstrap';
+
+import { useHistory, Link } from 'react-router-dom';
 
 const Signin = () => {
+  let history = useHistory();
+
+  // const email = 'email@example.com';
+  // const password = '123456';
+
+  const email = null;
+  const password = null;
+
+  function handleLogin() {
+    if (email && password) {
+      history.push('/');
+    }
+  }
+
   return (
     <Container>
       <Form>
@@ -18,7 +34,7 @@ const Signin = () => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={handleLogin}>
           Submit
         </Button>
       </Form>

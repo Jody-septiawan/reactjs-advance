@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
 // import useParams
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 const DetailUser = () => {
   const [data, setData] = useState(null);
   // call useParams to get params object
   const params = useParams();
+
+  console.log(params);
 
   // don't worry about this, we'll cover later
   useEffect(() => {
